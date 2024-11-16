@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Section</title>
+  <link rel="stylesheet" href="help.css">
+</head>
+<body>
+    <section id="help">
+      <div class="faq-list">
+        <h3>Frequently Asked Questions</h3>
+        <ul>
+          <li data-question="q4">How does the Smart Parking System work?</li>
+          <li data-question="q1">How do I reserve a parking space?</li>
+          <li data-question="q2">What payment methods are accepted?</li>
+          <li data-question="q3">Can I modify or cancel my parking reservation?</li>
+        </ul>
+      </div>
+      <div class="faq-content">
+        <button class="back-button" onclick="goToHome()">Back</button>
+        <h2>Smart Parking Reservation System</h2>
+        <h2 id="faq-answer">Offering a good parking service 24/7 opened with securities, and well monitored</h2>
+      </div>
+    </section>
+  
+    <script>
+      function goToHome() {
+        window.location.href = "index.html";
+      }
+
+
+      document.addEventListener("DOMContentLoaded", function() {
+  const questions = document.querySelectorAll(".faq-list li");
+  const answerContainer = document.getElementById("faq-answer");
+
+  questions.forEach(question => {
+    question.addEventListener("click", function() {
+      questions.forEach(q => q.classList.remove("active"));
+      question.classList.add("active");
+
+      const questionKey = question.getAttribute("data-question");
+      answerContainer.innerHTML = answers[questionKey] || "Answer not available.";
+    });
+  });
+});
+
+const answers = {
+  q1: `
+    <h3>How do I reserve a parking space?</h3>
+    <p>To reserve a parking space, simply log into the app, select your location, choose your desired parking area, and select your preferred time slot. Confirm the reservation, and you’ll receive a confirmation with your parking details.</p>
+  `,
+  q2: `
+    <h3>What payment methods are accepted?</h3>
+    <p>Since its Mobile, Its better to have a E-Wallet Payments</p>
+    <ul>
+      <li>Mobile E-Payments (Paypal)</li>
+    </ul>
+    <p>All transactions are secure and encrypted to protect your information.</p>
+  `,
+  q3: `
+    <h3>Can I modify or cancel my parking reservation?</h3>
+    <p>No, our system operates on the principle of "Time is Gold." This ensures efficient use of parking resources and provides the best service for all customers.</p>
+    <p>Once a reservation is confirmed, modifications or cancellations are not allowed. We encourage you to double-check all details before finalizing your booking to avoid any inconvenience.</p>
+  `,
+  q4: `
+    <h3>How does the Smart Parking System work?</h3>
+    <p><strong>Our Smart Parking uses sensors to detect available parking spaces and provides real-time information to drivers, allowing them to easily locate the vacant spots.</strong></p>
+    <p>Tips for Using the Smart Parking System:</p>
+    <ol>
+      <li><strong>Plan Ahead:</strong> To ensure availability, we recommend reserving your parking space in advance, especially during peak hours.</li>
+      <li><strong>Follow Instructions:</strong> Pay attention to signage and follow instructions from our system to easily locate and access your reserved parking space.</li>
+      <li><strong>Contact Support:</strong> If you encounter any issues or have questions about our Smart Parking System, feel free to reach out to our customer support team for assistance.</li>
+    </ol>
+    <p>We hope this information helps enhance your parking experience with our Smart Parking System. If you need further assistance, please don't hesitate to contact us.</p>
+  `
+};
+
+    </script>
+  </body>
+</html>
