@@ -13,143 +13,128 @@
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
   }
-  
-  /* Navigation Bar Styling */
   .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    align-items: center;
-    background-color: #002147;
-    padding: 10px 10px; /* Add some horizontal padding */
+    background-color: transparent;
+    padding: 20px 20px; /* Increased padding for a larger appearance */
     z-index: 1000;
     display: flex;
-    justify-content: space-between; /* Space between navbar items */
+    justify-content: center; /* Center the entire navbar content */
     align-items: center;
   }
-  
   
   .navbar ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px; /* Larger gap between items */
   }
   
   .navbar li {
-    margin: 0 15px;
+    margin: 0 20px;
   }
+  
   .navbar .nav-link {
     text-decoration: none;
     color: white;
-    font-size: 16px;
+    font-size: 18px; /* Increased font size for better readability */
     font-weight: bold;
     transition: color 0.3s ease;
   }
   
-  
   .navbar .nav-link:hover {
-    color: #46443f; /* Lighter orange on hover */
+    color: #ffa500; /* Changed hover color for better visibility */
   }
   
   .navbar .nav-link.active {
-    color: #64604f; /* Highlight active link */
-    border-bottom: 2px solid white;
+    color: #ffffff;
+    border-bottom: 3px solid #ffa500; /* Thicker underline for the active link */
   }
-
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px 10px;
-    transition: background-color 0.3s ease;
+  
+  @media screen and (max-width: 768px) {
+    .navbar ul {
+      flex-direction: column;
+      gap: 15px;
+      background-color: #ff6600;
+      padding: 15px;
+      position: fixed;
+      top: 70px; /* Adjusted to avoid overlap */
+      left: 0;
+      width: 100%;
+      display: none;
+    }
+  
+    .navbar ul.show {
+      display: flex;
+    }
+  
+    .navbar .nav-link {
+      text-align: center;
+      font-size: 16px;
+    }
   }
-  /* Responsive Design */
-@media screen and (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
-    gap: 10px;
-    background-color: #ff6600;
-    padding: 10px;
-    position: fixed;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    display: none;
-  }
-
-  .navbar ul.show {
-    display: flex;
-  }
-
-  .navbar .nav-link {
-    text-align: center;
-  }
-}
-/* Home Section */
+/* Home Section Styling */
 .home-section {
   display: flex;
-  flex-direction: row; /* Arrange elements horizontally */
-  justify-content: space-between; /* Space between the content */
-  align-items: center; /* Center vertically */
-  width: 100%;
-  background-color: #FF7518;
-  height: auto;
-  margin-top: 35px;
-  padding: 80px;
+  flex-direction: column; /* Stacks title above content */
+  justify-content: center; /* Centers all items vertically */
+  align-items: center; /* Centers all items horizontally */
+  background-color: #002147; /* Dark blue background */
+  height: 100vh; /* Full height of the viewport */
+  box-sizing: border-box;
+  color: white;
+  text-align: center; /* Centers the title text */
 }
-.home-content {
+
+.tangina {
+  font-size: 4rem; /* Big text for the title */
+  margin-top: 55px;
+  text-align: center; /* Centers the title */
+}
+
+.content-wrapper {
   display: flex;
-  flex-direction: column; 
-  justify-content: flex-start; 
-  align-items: flex-start;
-  margin-right: 20px; 
-  order: 1; 
+  justify-content: space-between; /* Distribute the elements evenly */
+  align-items: center; /* Vertically align the elements */
+  width: 100%; /* Make sure content uses the full width */
+  max-width: 1200px; /* Restrict max width for the content */
+  margin-top: 20px; /* Adds space below the title */
 }
 
-/* Heading */
-.home-content h1 {
-  font-size: 28px;
-  color: #000000;
-  margin: 10px 0;
-}
-
-/* Description */
-.home-description {
-  font-size: 20px;
-  color: rgb(0, 0, 0);
-  margin: 10px 200px;
-  width: 90%;
-  text-align: justify;
-  max-width: 350px;
-}
-
-/* Download Button */
 .download-btn {
   background-color: #000000;
-  color: rgb(255, 255, 255);
-  padding: 10px;
+  color: #ffffff;
+  padding: 15px 20px; /* Padding for the button */
   text-decoration: none;
-  border-radius: 3px;
-  margin-top: 300px;
+  border-radius: 75px;
+  font-size: 16px;
+  margin-right: 10px; /* Space to the right of the button */
 }
 
-/* Reservation Image */
+.download-btn:hover {
+  background-color: #d82505;
+}
+
+.home-description {
+  font-size: 1.2rem; /* Medium-sized text for the description */
+  line-height: 1.8; /* Adjust the line height for readability */
+  max-width: 600px; /* Limiting width for text */
+  text-align: center; /* Center the text */
+}
+
 .reservation-image {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  margin-top: 20px;
-  order: 2; 
+  margin-top: 50px;
+  max-width: 50%; /* Restricting the image width */
+  height: auto; /* Ensures the image maintains its aspect ratio */
 }
 
-  .download-btn:hover {
-    background-color: #d82505;
-  }
-  /* Pricing Section */
+  
 #pricing {
     text-align: center;
     padding: 40px 0;
     color: #333;
+    background-color: #E1DBD6;
   }
   
   #pricing h2 {
@@ -223,6 +208,7 @@
 #how-it-works {
     text-align: center;
     padding: 40px 0;
+    background-color: #E1DBD6;
   }
   
   #how-it-works h2 {
@@ -318,7 +304,7 @@
   /* About Us Section */
 .about-section {
     padding: 50px;
-    background-color: #fff;
+    background-color: #E1DBD6;
     color: #333;
     align-items: center;
   }
