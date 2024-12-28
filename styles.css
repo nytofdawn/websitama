@@ -95,11 +95,11 @@
 
 .content-wrapper {
   display: flex;
-  justify-content: space-between; /* Distribute the elements evenly */
-  align-items: center; /* Vertically align the elements */
-  width: 100%; /* Make sure content uses the full width */
-  max-width: 1200px; /* Restrict max width for the content */
-  margin-top: 20px; /* Adds space below the title */
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%; 
+  max-width: 1200px;
+  margin-top: 20px; 
 }
 
 .download-btn {
@@ -117,16 +117,16 @@
 }
 
 .home-description {
-  font-size: 1.2rem; /* Medium-sized text for the description */
-  line-height: 1.8; /* Adjust the line height for readability */
-  max-width: 600px; /* Limiting width for text */
-  text-align: center; /* Center the text */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 600px; 
+  text-align: center; 
 }
 
 .reservation-image {
   margin-top: 50px;
-  max-width: 50%; /* Restricting the image width */
-  height: auto; /* Ensures the image maintains its aspect ratio */
+  max-width: 50%;
+  height: auto;
 }
 
   
