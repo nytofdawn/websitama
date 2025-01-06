@@ -13,6 +13,19 @@ body {
   background-color: #f5f5f5;
 }
 
+/* Ensure all fonts inherit from body */
+#help,
+.faq-list,
+.faq-list h3,
+.faq-list ul,
+.faq-list li,
+.faq-content,
+.faq-content h2,
+.faq-content p,
+.back-button {
+  font-family: inherit;
+}
+
 /* Help Section */
 #help {
   margin: 0;
