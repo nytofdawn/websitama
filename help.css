@@ -1,90 +1,144 @@
+/* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
 
+/* Help Section */
+#help {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Ensures layout adjusts for smaller screens */
+  height: 100vh;
+}
+
+/* FAQ List */
+.faq-list {
+  width: 100%; /* Full width on small screens */
+  max-width: 400px; /* Restricts width on larger screens */
+  background-color: #002147;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+  border-radius: 15px; /* Rounded corners for the list */
+  margin: 20px auto; /* Centered for smaller screens */
+  flex: 1;
+}
+
+.faq-list h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.faq-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-list li {
+  margin: 10px 0;
+  padding: 15px;
+  background-color: #34495e;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 10px; /* Rounded corners for tabs */
+  text-align: center;
+}
+
+.faq-list li:hover,
+.faq-list li.active {
+  background-color: #106dd8;
+  color: white;
+  transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+/* FAQ Content */
+.faq-content {
+  width: 100%; /* Full width on mobile */
+  flex: 2; /* Larger area on larger screens */
+  padding: 20px;
+  background-color: white;
+  color: #2c3e50;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 15px; /* Rounded corners for content */
+  margin: 20px auto; /* Spacing for smaller screens */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for better design */
+}
+
+.faq-content h2 {
+  margin-top: 0;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+}
+
+.faq-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.back-button {
+  align-self: flex-end; /* Align button to the top-right */
+  background-color: #002147;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px; /* Rounded button */
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-bottom: 20px;
+}
+
+.back-button:hover {
+  background-color: #106dd8;
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   #help {
-    margin: 0;
-    display: flex;
-    height: 100vh;
+    flex-direction: column; /* Stack FAQ list and content vertically */
+    height: auto; /* Adjust height for content overflow */
   }
 
   .faq-list {
-    width: 30%;
-    background-color: #002147;
-    color: white;
-    padding: 20px;
-    overflow-y: auto;
-  }
-
-  .faq-list h3 {
-    margin-top: 0;
-  }
-
-  .faq-list ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .faq-list li {
-    margin: 10px 0;
-    padding: 15px;
-    background-color: #34495e;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s;
-  }
-
-  .faq-list li:hover, .faq-list li.active {
-    background-color: #002147;
+    width: 90%; /* Adjust width for smaller screens */
+    margin: 10px auto;
   }
 
   .faq-content {
-    width: 70%;
-    padding: 40px;
-    background-color: white;
-    color: #2c3e50;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    width: 90%; /* Adjust width for smaller screens */
+    margin: 10px auto;
   }
 
   .faq-content h2 {
-    margin-top: 0;
-    font-size: 24px;
+    font-size: 20px; /* Adjust font size for smaller screens */
   }
 
-  .faq-content p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 10px 0;
+  .faq-list li {
+    font-size: 16px; /* Adjust font size for tabs */
+    padding: 10px; /* Adjust padding for smaller screens */
   }
 
   .back-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #002147;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 8px 12px; /* Adjust padding for smaller screens */
   }
-
-  .back-button:hover {
-    background-color: #106dd8;
-  }
+}
