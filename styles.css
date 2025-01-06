@@ -85,32 +85,69 @@
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
-    gap: 10px; /* Smaller gap between items */
-    background-color: #275d81;
-    padding: 15px;
-    position: fixed;
-    top: 60px; /* Adjusted for proper alignment */
+  .navbar {
+    top: 0;
     left: 0;
     width: 100%;
-    display: none;
+    background-color: #275d81; /* Ensure the navbar background matches the dropdown */
+    padding: 0; /* Remove extra padding to align properly */
+    display: flex;
+    flex-direction: column; /* Ensure toggle and menu align vertically */
     box-sizing: border-box;
   }
 
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    background-color: #275d81; /* Consistent background color */
+    padding: 15px 0; /* Add padding inside the dropdown */
+    position: fixed;
+    top: 0; /* Align dropdown flush with the top */
+    left: 0;
+    width: 100%;
+    display: none;
+    margin: 0; /* Remove any default margin */
+    box-sizing: border-box; /* Ensure padding does not affect width */
+  }
+
   .navbar ul.show {
-    display: flex;
+    display: flex; /* Show dropdown menu when toggle is clicked */
   }
 
   .navbar .nav-link {
     text-align: center;
-    font-size: 14px; /* Slightly smaller font */
+    font-size: 16px; /* Slightly larger font for better readability */
+    padding: 10px 0; /* Add vertical padding for better touch targets */
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .navbar .nav-link:hover {
+    background-color: #1d4b65; /* Highlight effect on hover */
   }
 
   .navbar-toggle {
     display: block; /* Show toggle button on mobile */
+    background-color: #1d4b65; /* Matching background for the button */
+    border: none;
+    padding: 10px 15px;
+    margin: 10px auto; /* Center the button horizontally */
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .navbar-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px auto; /* Spacing between bars */
+    transition: all 0.3s ease;
   }
 }
+
  
 /* Home Section Styling */
 .home-section {
